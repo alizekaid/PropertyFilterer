@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Filter</title>
+</head>
+<body>
+<div class="container">
+    <h1>Property Filter</h1>
+    <form id="propertyFilterForm">
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city">
+        </div>
+        <div class="form-group">
+            <label for="neighbourhood">Neighbourhood:</label>
+            <input type="text" id="neighbourhood" name="neighbourhood">
+        </div>
+        <div class="form-group checkbox-label">
+            <input type="checkbox" id="instantBookable" name="instantBookable">
+            <label for="instantBookable">Instant Bookable</label>
+        </div>
+        <div class="form-group checkbox-label">
+            <input type="checkbox" id="cleaningFee" name="cleaningFee">
+            <label for="cleaningFee">Cleaning Fee</label>
+        </div>
+        <div class="form-group">
+            <label for="cancellationPolicy">Cancellation Policy:</label>
+            <select id="cancellationPolicy" name="cancellationPolicy">
+                <option value="">Select</option>
+                <option value="strict">Strict</option>
+                <option value="moderate">Moderate</option>
+                <option value="flexible">Flexible</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="minPrice">Minimum Price:</label>
+            <input type="number" id="minPrice" name="minPrice">
+        </div>
+        <div class="form-group">
+            <label for="maxPrice">Maximum Price:</label>
+            <input type="number" id="maxPrice" name="maxPrice">
+        </div>
+        <div class="form-group">
+            <label for="bedType">Bed Type:</label>
+            <select id="bedType" name="bedType">
+                <option value="">Select</option>
+                <option value="Real Bed">Real Bed</option>
+                <option value="Futon">Futon</option>
+                <option value="Pull-out Sofa">Pull-out Sofa</option>
+                <option value="Couch">Couch</option>
+                <option value="Airbed">Airbed</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="minBeds">Minimum Beds:</label>
+            <input type="number" id="minBeds" name="minBeds">
+        </div>
+        <div class="form-group">
+            <label for="maxBeds">Maximum Beds:</label>
+            <input type="number" id="maxBeds" name="maxBeds">
+        </div>
+        <div class="form-group">
+            <label for="minAccommodates">Minimum Accommodates:</label>
+            <input type="number" id="minAccommodates" name="minAccommodates">
+        </div>
+        <div class="form-group">
+            <label for="maxAccommodates">Maximum Accommodates:</label>
+            <input type="number" id="maxAccommodates" name="maxAccommodates">
+        </div>
+        <div class="form-group">
+            <label for="propertyType">Property Type:</label>
+            <select id="propertyType" name="propertyType">
+                <option value="">Select</option>
+                <option value="Apartment">Apartment</option>
+                <option value="House">House</option>
+                <option value="Condominium">Condominium</option>
+                <option value="Loft">Loft</option>
+                <option value="Townhouse">Townhouse</option>
+                <option value="Hostel">Hostel</option>
+                <option value="Guest suite">Guest suite</option>
+                <option value="Bed & Breakfast">Bed & Breakfast</option>
+                <option value="Bungalow">Bungalow</option>
+                <option value="Guesthouse">Guesthouse</option>
+                <option value="Dorm">Dorm</option>
+                <option value="Other">Other</option>
+                <option value="Camper/RV">Camper/RV</option>
+                <option value="Villa">Villa</option>
+                <option value="Boutique hotel">Boutique hotel</option>
+                <option value="Timeshare">Timeshare</option>
+                <option value="In-law">In-law</option>
+                <option value="Boat">Boat</option>
+                <option value="Serviced apartment">Serviced apartment</option>
+                <option value="Castle">Castle</option>
+                <option value="Cabin">Cabin</option>
+                <option value="Treehouse">Treehouse</option>
+                <option value="Tipi">Tipi</option>
+                <option value="Vacation home">Vacation home</option>
+                <option value="Tent">Tent</option>
+                <option value="Hut">Hut</option>
+                <option value="Casa particular">Casa particular</option>
+                <option value="Chalet">Chalet</option>
+                <option value="Yurt">Yurt</option>
+                <option value="Earth House">Earth House</option>
+                <option value="Parking Space">Parking Space</option>
+                <option value="Train">Train</option>
+                <option value="Cave">Cave</option>
+                <option value="Lighthouse">Lighthouse</option>
+                <option value="Island">Island</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="roomType">Room Type:</label>
+            <select id="roomType" name="roomType">
+                <option value="">Select</option>
+                <option value="Entire home/apt">Entire home/apt</option>
+                <option value="Private room">Private room</option>
+                <option value="Shared room">Shared room</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="minBathrooms">Minimum Bathrooms:</label>
+            <input type="number" id="minBathrooms" name="minBathrooms">
+        </div>
+        <div class="form-group">
+            <label for="maxBathrooms">Maximum Bathrooms:</label>
+            <input type="number" id="maxBathrooms" name="maxBathrooms">
+        </div>
+        <div class="form-group">
+            <label for="minBedrooms">Minimum Bedrooms:</label>
+            <input type="number" id="minBedrooms" name="minBedrooms">
+        </div>
+        <div class="form-group">
+            <label for="maxBedrooms">Maximum Bedrooms:</label>
+            <input type="number" id="maxBedrooms" name="maxBedrooms">
+        </div>
+        <button type="submit">Filter</button>
+    </form>
+    <div id="results"></div>
+    <div id="pagination">
+        <button id="prevPage" disabled>Previous Page</button>
+        <span id="currentPage"></span>
+        <button id="nextPage">Next Page</button>
+    </div>
+</div>
+
+<script>
+    let currentPage = 0;
+    const pageSize = 10; // Number of items per page
+
+    document.getElementById('propertyFilterForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        fetchResults();
+    });
+
+    function fetchResults() {
+        const formData = new FormData(document.getElementById('propertyFilterForm'));
+        const city = formData.get('city') || null;
+        const neighbourhood = formData.get('neighbourhood') || null;
+        const instantBookable = formData.has('instantBookable') ? true : null;
+        const cancellationPolicy = formData.get('cancellationPolicy') || null;
+        const minPrice = formData.get('minPrice') || null;
+        const maxPrice = formData.get('maxPrice') || null;
+        const bedType = formData.get('bedType') || null;
+        const minBeds = formData.get('minBeds') || null; // Add minimum beds
+        const maxBeds = formData.get('maxBeds') || null; // Add maximum beds
+        const propertyType = formData.get('propertyType') || null; // Add property type
+        const roomType = formData.get('roomType') || null;
+        const minBathrooms = formData.get('minBathrooms') || null;
+        const maxBathrooms = formData.get('maxBathrooms') || null;
+        const minBedrooms = formData.get('minBedrooms') || null;
+        const maxBedrooms = formData.get('maxBedrooms') || null;
+        const cleaningFee = formData.has('cleaningFee') ? true : null;
+        const minAccommodates = formData.get("minAccommodates") || null;
+        const maxAccommodates = formData.get("maxAccommodates") || null;
+
+
+        const url = `/api/search-adverts?page=${currentPage}&pageSize=${pageSize}` +
+            `${city ? `&city=${city}` : ''}` +
+            `${neighbourhood ? `&neighbourhood=${neighbourhood}` : ''}` +
+            `${instantBookable !== null ? `&instantBookable=${instantBookable}` : ''}` +
+            `${cancellationPolicy ? `&cancellationPolicy=${cancellationPolicy}` : ''}` +
+            `${minPrice ? `&minPrice=${minPrice}` : ''}` +
+            `${maxPrice ? `&maxPrice=${maxPrice}` : ''}` +
+            `${bedType ? `&bedType=${bedType}` : ''}` +
+            `${minBeds ? `&minBeds=${minBeds}` : ''}` + // Include minimum beds
+            `${maxBeds ? `&maxBeds=${maxBeds}` : ''}` + // Include maximum beds
+            `${propertyType ? `&propertyType=${propertyType}` : ''}` + // Include property type
+            `${roomType ? `&roomType=${roomType}` : ''}` +
+            `${minBathrooms ? `&minBathrooms=${minBathrooms}` : ''}` +
+            `${maxBathrooms ? `&maxBathrooms=${maxBathrooms}` : ''}` +
+            `${minBedrooms ? `&minBedrooms=${minBedrooms}` : ''}` +
+            `${maxBedrooms ? `&maxBedrooms=${maxBedrooms}` : ''}` +
+            `${minAccommodates ? `&minAccommodates=${minAccommodates}` : ''}` +
+            `${maxAccommodates ? `&maxAccommodates=${maxAccommodates}` : ''}` +
+            `&cleaningFee=${cleaningFee ? 1 : 0}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                displayResults(data);
+                updatePagination(data.totalPages);
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function displayResults(data) {
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '';
+
+        data.content.forEach(advert => {
+            const latitude = advert.location ? advert.location.latitude : 'Not available';
+            const longitude = advert.location ? advert.location.longitude : 'Not available';
+            const googleMapsUrl = latitude !== 'Not available' && longitude !== 'Not available' ? `https://www.google.com/maps/@${latitude},${longitude},15z` : '#';
+            const hostSince = advert.host && advert.host.since ? advert.host.since : 'Not available';
+            const hostResponseRate = advert.host && advert.host.response_rate ? advert.host.response_rate : 'Not available';
+            const amenities = advert.propInfo && advert.propInfo.amenities ? formatAmenities(advert.propInfo.amenities) : "Not available";
+
+            const advertElement = document.createElement('div');
+            advertElement.classList.add('advert-container');
+            advertElement.innerHTML = `
+                <div class="advert-thumbnail">
+                    <img src="${advert.thumbnailUrl}" alt="Thumbnail">
+                </div>
+                <div class="advert-info">
+                    <p><strong>Id:</strong> ${advert.id}</p>
+                    <p><strong>Name:</strong> ${advert.name}</p>
+                    <p><strong>City:</strong> ${advert.address.city}</p>
+                    <p><strong>Neighbourhood:</strong> ${advert.address.neighbourhood}</p>
+                    <p><strong>Zipcode:</strong> ${advert.address.zipcode}</p>
+                    <p><strong>Instant Bookable:</strong> ${advert.advertFeatures.instantBookable}</p>
+                    <p><strong>Cancellation Policy:</strong> ${advert.advertFeatures.cancellationPolicy}</p>
+                    <p><strong>Accommodates:</strong> ${advert.propInfo.accommodates}</p>
+                    <p><strong>Room Type:</strong> ${advert.rooms.roomType}</p>
+                    <p><strong>Bedrooms:</strong> ${advert.rooms.bedrooms}</p>
+                    <p><strong>Bathrooms:</strong> ${advert.rooms.bathrooms}</p>
+                    <p><strong>Latitude:</strong> ${latitude}</p>
+                    <p><strong>Longitude:</strong> ${longitude}</p>
+                     <p><strong>Amenities:</strong> ${amenities}</p>
+                    <p><a href="${googleMapsUrl}" target="_blank">Click To See the Location</a></p>
+                    <p><strong>Resting:</strong></p>
+                    <ul>
+                        <li><strong>Bed Type:</strong> ${advert.resting.bedType}</li>
+                        <li><strong>Beds:</strong> ${advert.resting.beds}</li>
+                    </ul>
+                </div>
+                <div class="host-info">
+                    <p><strong>Description:</strong> ${advert.propInfo ? advert.propInfo.description : 'Not available'}</p>
+                    <p><strong>Host Information</strong></p>
+                    <p><strong>Host Since:</strong> ${hostSince}</p>
+                    <p><strong>Host Response Rate:</strong> ${hostResponseRate}</p>
+                </div>
+            `;
+            resultsDiv.appendChild(advertElement);
+        });
+    }
+
+    function formatAmenities(amenities) {
+        // Split the amenities string by commas and remove any leading/trailing whitespace
+        const amenitiesArray = amenities.slice(1, -1).split(',').map(item =>{
+            if(!item.includes("translation missing"))
+            return item.trim().replace(/^"|"$/g, '');
+
+        });
+
+        // Join the array into a readable string separated by commas
+        return amenitiesArray.join(', ');
+    }
+
+
+
+    function updatePagination(totalPages) {
+        document.getElementById('currentPage').textContent = `Page ${currentPage + 1} of ${totalPages}`;
+        document.getElementById('prevPage').disabled = currentPage === 0;
+        document.getElementById('nextPage').disabled = currentPage + 1 >= totalPages;
+    }
+
+    document.getElementById('prevPage').addEventListener('click', function() {
+        if (currentPage > 0) {
+            currentPage--;
+            fetchResults();
+        }
+    });
+
+    document.getElementById('nextPage').addEventListener('click', function() {
+        currentPage++;
+        fetchResults();
+    });
+</script>
+</body>
+</html>
